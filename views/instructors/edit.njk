@@ -1,0 +1,73 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<!---criando bloco de conteúdo dividido ao meio -->
+
+<div class="card">
+    
+    <section class="avatar" style=" background: url({{instructor.avatar_url}}) no-repeat center center / cover"> 
+    </section>
+
+    <section class="details">
+
+        <form  method="POST" action="/instructors?_method=PUT">
+   
+        
+            <h3>Editar Instrutor</h3>
+
+
+            <div class="item">
+                <div>Status:</div>
+                <select name="status" id="status-edit">
+                    <option value="false">Escolher</option>
+                    <option value="true">Atendido!</option>
+                </select>
+            </div>
+            
+            <!-- Puxando formulário de fields.njk -->
+            {% include 'instructors/fields.njk' %}
+
+            <input
+                type="hidden" 
+                name="id" 
+                value={{instructor.id}}
+            >
+
+            
+
+        </form>
+
+        <form id="form-delete" action="/instructors?_method=DELETE" method="POST">
+            <input type="hidden" name="id" value={{instructor.id}}>
+
+            <button type="submit">Deletar</button>
+        </form>
+
+
+    </section>
+
+</div>
+
+<script>
+
+    const formDelete = document.querySelector("#form-delete");
+    formDelete.addEventListener("submit", function(event){
+        const confirmation = confirm("Você tem certeza sobre Deletar ?");
+        if(!confirmation){
+            event.preventDefault();
+        }
+
+    })
+
+</script>
+
+
+
+
+
+
+{% endblock content %}
+
+
+

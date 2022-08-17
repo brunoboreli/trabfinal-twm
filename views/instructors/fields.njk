@@ -1,0 +1,39 @@
+<div class="item">
+    <div>Título</div>
+    <div>
+        <input 
+            type="text"
+            name="name"
+            placeholder="Nome"
+            value="{{ instructor.name }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Descrição</div>
+    <div>
+        <input 
+            type="text"
+            name="description"
+            placeholder="Descreva o Problema"
+            value="{{ instructor.description }}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Palavras-Chave</div>
+    <div>
+        <input 
+            type="text"
+            name="services"
+            placeholder="Digite separado por vírgulas"
+            value="{{ instructor.services }}"
+        >
+    </div>
+</div>
+
+       
+<button type="submit">Salvar</button>
+     

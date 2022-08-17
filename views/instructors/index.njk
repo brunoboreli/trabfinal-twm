@@ -1,0 +1,45 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="card table-container">
+    <!--<a href="/instructors/create">Novo</a>-->
+
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Pedido de Serviço</th>
+                <th>Status</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for instructor in instructors %}
+            <tr>
+                <td>{{instructor.name}}</td>
+
+                {% if instructor.status%}
+                    <td>Atendido <span class="dot"></span></td>
+                    
+                {% else %}
+                    <td>Não Atendido <span class="dot"></span></td>
+                    
+                {% endif %}
+
+                <td><a href="/instructors/{{instructor.id}}">Visualizar</a></td>
+
+            </tr>
+            {% endfor %}
+    
+        </tbody>
+
+    </table>
+</div>
+
+
+{% endblock content %}
+
+
+

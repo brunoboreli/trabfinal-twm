@@ -1,0 +1,48 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<!---criando bloco de conteúdo dividido ao meio -->
+<div class="card">
+   
+    <section class="avatar" style=" background: url({{instructor.avatar_url}}) no-repeat center center / cover"> 
+    </section>
+
+    <section class="details">
+        <h3>Detalhes</h3>
+
+        <div class="item">
+            <div>Título do Pedido</div>
+            <div>{{instructor.name}}</div>
+        </div>
+
+        <div class="item">
+            <div>Descrição</div>
+            <div>{{instructor.description}}</div>
+        </div>
+
+        <div class="item">
+            <div>Palavras-Chave</div>
+            <div>
+                {% for service in instructor.services %}
+                <span>{{ service }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Pedido em:</div>
+            <div>{{instructor.created_at}}</div>
+        </div>
+
+        <a href="/instructors/{{instructor.id}}/edit" class="button">Editar</a>
+
+
+    </section>
+</div>
+
+
+{% endblock content %}
+
+
+

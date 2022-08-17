@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+
+    {% block head %}
+
+    <title>Tech Assist - Home</title>
+
+    {% endblock %}
+
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="links">
+
+            <a  href="/instructors">Pedidos de Serviço</a>
+            <!-- <a  href="/members">Membros</a> -->
+
+        </div>
+    
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>
